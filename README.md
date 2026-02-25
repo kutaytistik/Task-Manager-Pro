@@ -280,9 +280,9 @@ This project was developed to demonstrate:
 <img width="3802" height="1966" alt="4" src="https://github.com/user-attachments/assets/cbc41356-41fa-4356-bf1b-406e719d7535" /> 
 <img width="3773" height="1953" alt="66" src="https://github.com/user-attachments/assets/0166940b-8b8c-4d3c-a801-758fa0240e51" /> 
 <img width="3159" height="1811" alt="5" src="https://github.com/user-attachments/assets/e5fc47bc-eeb8-4e55-9e5d-7a938fb7c8a8" /> 
-<img width="3834" height="1971" alt="55" src="https://github.com/user-attachments/assets/b305ec33-130d-42f4-9691-e63525a9b5f
+<img width="3834" height="1971" alt="55" src="https://github.com/user-attachments/assets/b305ec33-130d-42f4-9691-e63525a9b5f" />
 <img width="3802" height="1122" alt="99999" src="https://github.com/user-attachments/assets/92fbb792-b07d-44a5-948c-fd311b3fd5ce" />
-0" />
+
 ---
 
 
