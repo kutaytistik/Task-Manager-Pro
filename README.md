@@ -1,9 +1,13 @@
 # ⚡ Task Manager Pro
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://taskmanagerproapp.netlify.app/)
-[![Angular](https://img.shields.io/badge/Angular-17-red?style=for-the-badge&logo=angular)](https://angular.io/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Status](https://img.shields.io/badge/Status-Production-success?style=for-the-badge)]()
+
+> Modern task management application built with Angular, featuring professional UI design and scalable frontend architecture.
+
+Task Manager Pro is a portfolio-level frontend application developed to demonstrate real-world Angular development practices, modern UI/UX implementation, and clean component-based architecture.
+
+The project focuses on usability, maintainability, and professional interface standards commonly used in modern web applications.
+
 
 🔗 **Live Application:**  
 https://taskmanagerproapp.netlify.app/
