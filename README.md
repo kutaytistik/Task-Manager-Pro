@@ -8,7 +8,8 @@ The project focuses on usability, maintainability, and professional interface st
 
 
 🔗 **Live Application:**  
-https://taskmanagerproapp.netlify.app/ [![Live Demo](https://img.shields.io/badge/Live-Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://taskmanagerproapp.netlify.app/)
+https://taskmanagerproapp.netlify.app/
+ [![Live Demo](https://img.shields.io/badge/Live-Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://taskmanagerproapp.netlify.app/)
 
 ---
 
