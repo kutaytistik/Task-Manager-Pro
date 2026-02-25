@@ -1,0 +1,312 @@
+.task-form-wrapper {
+
+  display: flex;
+
+  justify-content: center;
+
+  width: 100%;
+
+  margin-bottom: 30px;
+
+}
+
+
+.task-form-card {
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  padding: 35px;
+
+  border-radius: 16px;
+
+  background: white;
+
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+
+  transition: 0.3s;
+
+}
+
+
+.task-form-card:hover {
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+
+}
+
+
+/* HEADER */
+
+.task-form-header {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+
+}
+
+
+.task-form-icon {
+
+  font-size: 32px;
+
+}
+
+
+.task-form-title {
+
+  margin: 0;
+
+  font-weight: 700;
+
+  font-size: 22px;
+
+}
+
+
+.task-form-subtitle {
+
+  font-size: 15px;
+
+  color: gray;
+
+}
+
+
+/* LABEL */
+
+.modern-label {
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  margin-bottom: 6px;
+
+  display: block;
+
+}
+
+
+/* INPUT */
+
+.modern-input {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  border: 1px solid #ddd;
+
+  font-size: 15px;
+
+  transition: 0.2s;
+
+}
+
+
+.modern-input:focus {
+
+  outline: none;
+
+  border-color: #4facfe;
+
+  box-shadow: 0 0 0 3px rgba(79,172,254,0.2);
+
+}
+
+
+/* TEXTAREA */
+
+.modern-textarea {
+
+  resize: vertical;
+
+  min-height: 120px;
+
+  max-height: 350px;
+
+  line-height: 1.6;
+
+}
+
+
+/* GRID */
+
+.form-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 15px;
+
+}
+
+
+/* BUTTON */
+
+.modern-add-btn {
+
+  margin-top: 25px;
+
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #4facfe,
+    #00f2fe
+  );
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+}
+
+
+.modern-add-btn:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+
+}
+
+
+/* DARK MODE */
+
+body.dark-mode .task-form-card {
+
+  background: #1e1e1e;
+
+  color: white;
+
+}
+
+
+body.dark-mode .modern-input {
+
+  background: #2a2a2a;
+
+  color: white;
+
+  border-color: #444;
+
+  
+}
+.bullet-btn {
+
+  background: transparent;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  padding: 4px 10px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+.bullet-btn:hover {
+
+  background: #4facfe;
+
+  color: white;
+
+  border-color: #4facfe;
+
+}
+
+body.dark-mode .bullet-btn {
+
+  border-color: #555;
+
+  color: white;
+
+}
+/* TEXTAREA CONTAINER */
+
+.textarea-container {
+
+  position: relative;
+
+}
+
+
+/* FLOATING BULLET BUTTON */
+
+.bullet-floating-btn {
+
+  position: absolute;
+
+  top: 8px;
+
+  right: 8px;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 8px;
+
+  border: none;
+
+  background: rgba(0,0,0,0.05);
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+
+.bullet-floating-btn:hover {
+
+  background: #4facfe;
+
+  color: white;
+
+  transform: scale(1.1);
+
+}
+
+
+/* DARK MODE */
+
+body.dark-mode .bullet-floating-btn {
+
+  background: rgba(255,255,255,0.1);
+
+  color: white;
+
+}

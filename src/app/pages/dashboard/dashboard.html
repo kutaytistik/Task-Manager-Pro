@@ -1,0 +1,122 @@
+<div class="adaptive-wrapper">
+
+  <div class="dashboard-inner">
+    
+    <header class="main-header">
+
+      <div class="header-content">
+
+        <span class="status-badge">
+          Live Analytics
+        </span>
+
+        <h1>
+          Workflow Overview
+        </h1>
+
+        <p>
+          Currently focusing on
+          <strong>{{pendingTasks}}</strong>
+          active tasks with
+          <strong>{{completionRate}}%</strong>
+          progress.
+        </p>
+
+      </div>
+
+    </header>
+
+
+    <div class="focused-grid">
+      
+      <!-- CHART CARD -->
+      <div class="bento-card chart-section">
+
+        <div class="card-label">
+          Completion Status
+        </div>
+
+        <div class="canvas-container">
+
+          <canvas id="taskChart"></canvas>
+
+          <div class="chart-inner-data">
+
+            <span class="percentage">
+              {{completionRate}}%
+            </span>
+
+            <span class="sub-label">
+              Completed
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- TASK CARD -->
+      <div class="bento-card task-section">
+
+        <div class="card-label">
+          Recent Activity Stream
+        </div>
+
+        <div class="task-stream">
+
+          <div
+            *ngFor="let task of recentTasks"
+            class="task-row">
+
+            <div
+              class="priority-indicator"
+              [attr.data-priority]="task.priority">
+            </div>
+
+            <div class="task-info">
+
+              <span class="t-name">
+                {{task.title}}
+              </span>
+
+              <span class="t-meta">
+                {{task.priority}} Priority •
+                Status:
+                {{task.completed ? 'Done' : 'Active'}}
+              </span>
+
+            </div>
+
+            <div
+              class="task-status-pill"
+              [class.done]="task.completed">
+
+              <i class="fas"
+                 [class.fa-check]="task.completed"
+                 [class.fa-clock]="!task.completed">
+              </i>
+
+            </div>
+
+          </div>
+
+
+          <div
+            *ngIf="recentTasks.length === 0"
+            class="no-data">
+
+            Your activity stream is empty.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

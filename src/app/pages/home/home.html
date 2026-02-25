@@ -1,0 +1,46 @@
+<div class="container-fluid">
+
+  <h2 class="mb-4">
+    Tasks
+  </h2>
+
+  <div class="row mb-4">
+
+    <div class="col-md-4">
+
+      <div class="card p-3 text-center">
+        <h6>Total Tasks</h6>
+        <h3>{{ totalTasks }}</h3>
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="card p-3 text-center">
+        <h6>Completed</h6>
+        <h3 class="text-success">
+          {{ completedTasks }}
+        </h3>
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="card p-3 text-center">
+        <h6>Pending</h6>
+        <h3 class="text-warning">
+          {{ pendingTasks }}
+        </h3>
+      </div>
+
+    </div>
+
+  </div>
+
+  <app-task-form></app-task-form>
+
+  <app-task-list></app-task-list>
+
+</div>

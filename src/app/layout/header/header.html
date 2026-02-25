@@ -1,0 +1,69 @@
+<nav class="navbar">
+
+  <!-- LEFT -->
+  <div class="navbar-left">
+
+    <button
+      class="menu-btn"
+      (click)="toggleMenu()">
+
+      <i class="fas fa-bars"></i>
+
+    </button>
+
+
+    <a routerLink="/" class="logo">
+
+      Task Manager <span class="logo-pro">Pro</span>
+
+    </a>
+
+  </div>
+
+
+  <!-- RIGHT -->
+  <div class="navbar-right">
+
+    <!-- NOTIFICATION -->
+    <div class="notification">
+
+      <i class="fas fa-bell"></i>
+
+      <span class="notification-dot"></span>
+
+    </div>
+
+
+    <!-- DARK SWITCH -->
+    <div
+      class="apple-switch"
+      [class.active]="isDarkMode"
+      (click)="toggleDarkMode()">
+
+      <div class="switch-track">
+
+        <div class="switch-thumb">
+
+          <i
+            class="fas"
+            [class.fa-moon]="isDarkMode"
+            [class.fa-sun]="!isDarkMode">
+          </i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- AVATAR -->
+    <div class="avatar">
+
+      {{userInitial}}
+
+    </div>
+
+  </div>
+
+</nav>

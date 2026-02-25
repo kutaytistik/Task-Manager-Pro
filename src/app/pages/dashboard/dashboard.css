@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap');
+
+:root {
+  --app-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-sub: #64748b;
+  --accent: #4f46e5;
+  --done-color: #10b981;
+  --pending-color: #f59e0b;
+  --border: #e2e8f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-bg: #0b0e14;
+    --card-bg: #161b22;
+    --text-main: #f0f6fc;
+    --text-sub: #8b949e;
+    --accent: #818cf8;
+    --border: #30363d;
+  }
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.adaptive-wrapper {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-inner {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Header */
+.main-header {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.main-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 10px 0;
+  letter-spacing: -2.5px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Grid Layout */
+.focused-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+}
+
+.bento-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 35px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Chart Styles */
+.chart-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+
+.chart-inner-data {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.chart-inner-data .percentage {
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.chart-inner-data .sub-label {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  font-weight: 600;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Task List Styles */
+.task-row {
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.task-row:last-child {
+  border-bottom: none;
+}
+
+/* PRIORITY INDICATOR BASE */
+.priority-indicator {
+  width: 4px;
+  height: 35px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* HIGH PRIORITY → RED */
+.priority-indicator[data-priority="High"] {
+  background: linear-gradient(180deg, #ef4444, #dc2626);
+}
+
+/* MEDIUM PRIORITY → ORANGE */
+.priority-indicator[data-priority="Medium"] {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+}
+
+/* LOW PRIORITY → GREEN (FIXED) */
+.priority-indicator[data-priority="Low"] {
+  background: linear-gradient(180deg, #10b981, #059669);
+}
+
+.task-info {
+  flex-grow: 1;
+}
+
+.t-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.t-meta {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  font-weight: 500;
+}
+
+.task-status-pill {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.03);
+  color: var(--text-sub);
+}
+
+.task-status-pill.done {
+  color: var(--done-color);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+@media (max-width: 900px) {
+  .focused-grid {
+    grid-template-columns: 1fr;
+  }
+}

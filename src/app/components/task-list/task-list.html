@@ -1,0 +1,132 @@
+<div class="card shadow-sm p-3">
+  <h4 class="mb-3 fw-bold">📋 Task List</h4>
+
+  <div class="input-group-custom mb-3">
+    <span class="input-icon">🔍</span>
+    <input
+      [(ngModel)]="searchText"
+      (input)="onSearchChange()"
+      placeholder="Search by title or description..."
+      class="form-control modern-input ps-5"
+    />
+  </div>
+
+  <div class="row g-2 mb-3">
+    <div class="col-6">
+      <div class="select-wrapper">
+        <select
+          [(ngModel)]="filter"
+          (change)="onFilterChange()"
+          class="form-control modern-input custom-select"
+        >
+          <option value="all">All Status</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        <span class="select-arrow">▼</span>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="select-wrapper">
+        <select
+          [(ngModel)]="categoryFilter"
+          (change)="onFilterChange()"
+          class="form-control modern-input custom-select"
+        >
+          <option value="all">All Categories</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="School">School</option>
+          <option value="Health">Health</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Other">Other</option>
+        </select>
+        <span class="select-arrow">▼</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let task of filteredTasks" class="task-card mb-3" [class.completed]="task.completed">
+    <div class="priority-bar" [class.high]="task.priority === 'High'" [class.medium]="task.priority === 'Medium'" [class.low]="task.priority === 'Low'"></div>
+    
+    <div class="task-content">
+      <div *ngIf="editingTask?.id !== task.id">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h5 class="task-title">
+              <input type="checkbox" [checked]="task.completed" (change)="toggleCompleted(task)" class="me-2" />
+              {{ task.title }}
+            </h5>
+            <div class="task-description">{{ task.description }}</div>
+          </div>
+          <div class="button-group">
+            <button class="btn btn-sm btn-outline-primary me-2" (click)="editTask(task)">✏ Edit</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="confirmDelete(task.id)">🗑 Delete</button>
+          </div>
+        </div>
+
+        <div class="task-footer mt-3 d-flex gap-2 flex-wrap">
+          <span class="badge bg-primary d-flex align-items-center gap-1">
+            <ng-container [ngSwitch]="task.category">
+              <span *ngSwitchCase="'Work'">💼</span>
+              <span *ngSwitchCase="'Personal'">🏠</span>
+              <span *ngSwitchCase="'School'">🎓</span>
+              <span *ngSwitchCase="'Health'">❤️</span>
+              <span *ngSwitchCase="'Shopping'">🛒</span>
+              <span *ngSwitchDefault>📁</span>
+            </ng-container>
+            <span class="ms-1">{{ task.category }}</span>
+          </span>
+
+          <span class="badge d-flex align-items-center" [ngClass]="{'bg-success': task.priority === 'Low', 'bg-warning text-dark': task.priority === 'Medium', 'bg-danger': task.priority === 'High'}">
+            {{ task.priority }}
+          </span>
+
+          <span *ngIf="task.deadline" class="badge bg-dark d-flex align-items-center gap-1">
+            <span>📅</span>
+            <span class="ms-1">{{ task.deadline }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div *ngIf="editingTask?.id === task.id">
+        <input [(ngModel)]="editedTask.title" class="form-control mb-2 modern-input" placeholder="Title">
+        <textarea [(ngModel)]="editedTask.description" class="form-control mb-2 modern-input" rows="3"></textarea>
+        <div class="d-flex gap-2 mb-3">
+            <select [(ngModel)]="editedTask.priority" class="form-control modern-input">
+                <option value="Low">🟢 Low</option>
+                <option value="Medium">🟡 Medium</option>
+                <option value="High">🔴 High</option>
+            </select>
+            <select [(ngModel)]="editedTask.category" class="form-control modern-input">
+                <option value="Work">💼 Work</option>
+                <option value="Personal">🏠 Personal</option>
+                <option value="School">🎓 School</option>
+                <option value="Health">❤️ Health</option>
+                <option value="Shopping">🛒 Shopping</option>
+                <option value="Other">📁 Other</option>
+            </select>
+        </div>
+        <button class="btn btn-success btn-sm me-2" (click)="saveTask()">Save</button>
+        <button class="btn btn-secondary btn-sm" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="filteredTasks.length === 0" class="text-center text-muted mt-4 py-4">
+    <div style="font-size: 2rem;">🔍</div>
+    <h6>No tasks found matching your filters</h6>
+  </div>
+</div>
+
+<div class="modal-backdrop" *ngIf="showDeleteModal">
+  <div class="custom-modal-card">
+    <div class="modal-icon">⚠️</div>
+    <h3>Are you sure?</h3>
+    <p>Do you really want to delete this task? This action cannot be undone.</p>
+    <div class="modal-buttons">
+      <button class="btn-no" (click)="closeModal()">No, Keep it</button>
+      <button class="btn-yes" (click)="executeDelete()">Yes, Delete it</button>
+    </div>
+  </div>
+</div>

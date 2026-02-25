@@ -1,0 +1,44 @@
+<!-- HEADER -->
+<app-header
+  (menuClick)="toggleSidebar()"
+>
+</app-header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+
+    <!-- SIDEBAR -->
+    <div
+      *ngIf="sidebarOpen"
+      class="col-md-2 p-0"
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+    <div
+      [class.col-md-10]="sidebarOpen"
+      [class.col-md-12]="!sidebarOpen"
+      class="p-4 main-content"
+    >
+
+      <router-outlet></router-outlet>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+
+
+<!-- SCROLL TO TOP BUTTON -->
+<app-scroll-top></app-scroll-top>

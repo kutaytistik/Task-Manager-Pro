@@ -1,0 +1,28 @@
+<div class="container-fluid py-3">
+  <div class="calendar-container">
+    <div class="card calendar-card shadow-sm border-0">
+      
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-2">
+        <div class="d-flex align-items-center">
+          <div class="me-3 animate-bounce-in">
+            <span class="fs-1">🗓️</span>
+          </div>
+          <div>
+            <h2 class="mb-1 fw-bold task-title-gray animate-fade-in-up">Your Task Overview</h2>
+            <p class="task-subtitle-gray animate-fade-in-up delay-1">Visualize your deadlines and manage priorities effectively.</p>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 animate-fade-in delay-2">
+          <div class="legend-pill"><span class="dot bg-danger"></span> High</div>
+          <div class="legend-pill"><span class="dot bg-warning"></span> Med</div>
+          <div class="legend-pill"><span class="dot bg-success"></span> Low</div>
+        </div>
+      </div>
+
+      <div class="full-calendar-wrapper">
+        <full-calendar [options]="calendarOptions"></full-calendar>
+      </div>
+    </div>
+  </div>
+</div>

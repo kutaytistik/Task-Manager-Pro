@@ -1,0 +1,93 @@
+/* Ana Konteynır - Yana doğru genişletildi */
+.calendar-container {
+  max-width: 1150px; /* 1050'den 1150'ye çıkarıldı */
+  margin: 10px auto;
+  padding: 0 10px;
+}
+
+.calendar-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+/* YAZI RENKLERİ (GRİ) */
+.task-title-gray {
+  color: #4b5563; /* Koyu gri */
+  font-size: 1.4rem;
+}
+
+.task-subtitle-gray {
+  color: #9ca3af; /* Açık gri */
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* FullCalendar - Yükseklik korundu, genişlik esnetildi */
+.fc {
+  font-family: 'Inter', sans-serif;
+  height: 560px !important; 
+  --fc-border-color: #f3f4f6;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.4rem !important;
+  color: #4b5563 !important;
+  font-weight: 700;
+}
+
+/* Gün İsimleri ve Numaraları */
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+  color: #6b7280 !important;
+  text-decoration: none !important;
+}
+
+/* Legend Tasarımı */
+.legend-pill {
+  font-size: 0.8rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f9fafb;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* Butonlar */
+.fc .fc-button-primary {
+  background-color: #6366f1 !important;
+  border: none !important;
+  padding: 5px 12px !important;
+  font-size: 0.85rem !important;
+  transition: opacity 0.2s;
+}
+
+.fc .fc-button-primary:hover {
+  opacity: 0.9;
+}
+
+/* Etkinlikler */
+.fc-event {
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.99) translateY(5px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
